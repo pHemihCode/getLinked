@@ -44,9 +44,15 @@ import {
 } from "@/CONSTANTS/images";
 
 export default function Home() {
+     
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
   return (
     <main className="relative">
-      <section className="bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG pt-5 z-0">
+      <motion.section className="bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG pt-5 z-0">
         <div className="flex flex-col items-center lg:items-end pr-0 lg:pr-36 relative">
           <h1 className="text-white text-base font-bold lg:text-2xl italic">
             Igniting a Revolution in HR Innovation
@@ -95,8 +101,8 @@ export default function Home() {
             </Link>
             <div className="timers">
               <h1 className="font-semibold text-4xl">
-                00<b className="text-xs lg:text-sm font-normal">H</b> 00
-                <b className="text-xs lg:text-sm  font-normal">M</b> 00
+                {hours}<b className="text-xs lg:text-sm font-normal">H</b> {minutes}
+                <b className="text-xs lg:text-sm  font-normal">M</b> {seconds}
                 <b className="text-xs lg:text-sm font-normal">S</b>
               </h1>
             </div>
@@ -104,17 +110,17 @@ export default function Home() {
               <Image
                 src={starP}
                 alt="star"
-                className="absolute -top-5 left-[75%] lg:top-16 lg:left-[45%] w-2 h-2 lg:w-6 lg:h-6"
+                className="absolute -top-5 left-[75%] lg:top-16 lg:left-[45%] w-2 h-2 lg:w-6 lg:h-6 shining shining"
               />
               <Image
                 src={starP}
                 alt="star"
-                className="absolute bottom-[70%] left-[75%] lg:bottom-44 lg:left-[35%] w-2 h-2 lg:w-6 lg:h-6"
+                className="absolute bottom-[70%] left-[75%] lg:bottom-44 lg:left-[35%] w-2 h-2 lg:w-6 lg:h-6 shining "
               />
               <Image
                 src={starW}
                 alt="star"
-                className="absolute -top-7 left-[28%] lg:left-[16%] lg:top-0 w-4 h-4 lg:w-6 lg:h-6"
+                className="absolute -top-7 left-[28%] lg:left-[16%] lg:top-0 w-4 h-4 lg:w-6 lg:h-6 shining"
               />
             </div>
           </div>
@@ -127,19 +133,17 @@ export default function Home() {
               className="object-cover z-30 filter grayscale"
             />
             {/* <Image src={metrix} alt="fire" className='absolute top-0 z-0'/> */}
-            <Image
+            <Image      
               src={universe}
               alt="universe"
-              className="absolute top-0 left-[10%] z-20 max-w-[80%]"
+              className="absolute top-0 left-[10%] z-20 w-[70%] rotating"
             />
             <div className=""></div>
           </div>
         </div>
-      </section>
+      </motion.section>
       <hr className=" opacity-30" />
-   <motion.div style={{background:"red", height:"100vh"}} initial={{opacity:0}} whileInView={{opacity:1}} transition={{ duration: 1, delay:1 }}>
 
-   </motion.div>
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -155,7 +159,7 @@ export default function Home() {
           <Image
             src={starP}
             alt="lightbulb"
-            className="absolute w-2 h-2 lg:w-3 lg:h-3 top-[30%] lg:left-0 left-5"
+            className="absolute w-2 h-2 lg:w-3 lg:h-3 top-[30%] lg:left-0 left-5 shining"
           />
           <Image
             src={arrow}
@@ -167,7 +171,7 @@ export default function Home() {
           <Image
             src={starP}
             alt="star"
-            className="absolute w-3 h-3 lg:w-5 lg:h-5 right-0 top-10"
+            className="absolute w-3 h-3 lg:w-5 lg:h-5 right-0 top-10 shining"
           />
           <h1 className="text-xl lg:text-3xl text-white font-semibold py-5 lg:py-3 text-center lg:text-start">
             Introduction to getlinked <br />
@@ -190,7 +194,7 @@ export default function Home() {
           <Image
             src={starW}
             alt="star"
-            className="absolute w-3 h-3 lg:w-5 lg:h-5 right-36 -top-5 opacity-50"
+            className="absolute w-3 h-3 lg:w-5 lg:h-5 right-36 -top-5 opacity-50 shining"
           />
           <Image
             src={starW}
@@ -228,14 +232,14 @@ export default function Home() {
           <Image
             src={starW}
             alt="lightbulb"
-            className="absolute w-2 h-2 lg:w-3 lg:h-3 top-[50%] lg:left-[55%] left-[50%] opacity-50"
+            className="absolute w-2 h-2 lg:w-3 lg:h-3 top-[50%] lg:left-[55%] left-[50%] opacity-50 shining"
           />
         </div>
         <div className="flex flex-col items-center lg:items-start w-full lg:w-[40%] relative">
           <Image
             src={starW}
             alt="lightbulb"
-            className="absolute w-2 h-2 lg:w-3 lg:h-3 bottom-5 lg:-bottom-[5%] right-0 lg:right-[100%]"
+            className="absolute w-2 h-2 lg:w-3 lg:h-3 bottom-5 lg:-bottom-[5%] right-0 lg:right-[100%] shining"
           />
           <h1 className="text-xl lg:text-2xl text-white font-semibold text-center lg:text-start">
             Judging Criteria <br />
@@ -368,12 +372,12 @@ export default function Home() {
             <Image
               src={starPurple}
               alt="lightbulb"
-              className="absolute top-0 right-[50%] h-3 w-fit lg:h-5"
+              className="absolute top-0 right-[50%] h-3 w-fit lg:h-5 shining"
             />
             <Image
               src={starPurple}
               alt="lightbulb"
-              className="absolute top-[20%] left-[20%] h-3 w-fit lg:h-5"
+              className="absolute top-[20%] left-[20%] h-3 w-fit lg:h-5 shining"
             />
             <Image
               src={starW}
@@ -383,7 +387,7 @@ export default function Home() {
             <Image
               src={starW}
               alt="lightbulb"
-              className="absolute right-[20%] bottom-0 h-3 w-fit lg:h-5"
+              className="absolute right-[20%] bottom-0 h-3 w-fit lg:h-5 shining"
             />
           </div>
         </div>
@@ -434,7 +438,7 @@ export default function Home() {
               <Image
                 src={starW}
                 alt="star"
-                className="absolute w-3 h-3 lg:w-5 lg:h-5 bottom-[60%] right-[15%] "
+                className="absolute w-3 h-3 lg:w-5 lg:h-5 bottom-[60%] right-[15%] shining "
               />
               <Image
                 src={starW}
@@ -726,7 +730,7 @@ export default function Home() {
           <Image
             src={starW}
             alt="lightbulb"
-            className="absolute w-2 h-2 lg:w-3 lg:h-3 bottom-[10%] lg:left-[40%] left-[50%]"
+            className="absolute w-2 h-2 lg:w-3 lg:h-3 bottom-[10%] lg:left-[40%] left-[50%] shining"
           />
         </div>
         <div className="relative w-full lg:w-[40%] flex flex-col items-center justify-around">
@@ -786,12 +790,12 @@ export default function Home() {
           <Image
             src={starW}
             alt="lightbulb"
-            className="absolute w-2 h-2 lg:w-3 lg:h-3 -top-[80%] lg:top-[40%] lg:right-[3%] lef-[50%] hidden lg:inline"
+            className="absolute w-2 h-2 lg:w-3 lg:h-3 -top-[80%] lg:top-[40%] lg:right-[3%] lef-[50%] hidden lg: shining"
           />
           <Image
             src={starW}
             alt="lightbulb"
-            className="absolute w-2 h-2 lg:w-3 lg:h-3 -top-[70%] lg:top-[35%] lg:left-0 left-[80%]"
+            className="absolute w-2 h-2 lg:w-3 lg:h-3 -top-[70%] lg:top-[35%] lg:left-0 left-[80%] shining"
           />
           <Image
             src={starW}
@@ -866,17 +870,17 @@ export default function Home() {
         <Image
           src={starPurple}
           alt="liberty"
-          className="absolute hidden lg:inline left-[13%] top-[22%] w-3 h-3 lg:w-5 lg:h-5 opacity-50 "
+          className="absolute hidden lg:inline left-[13%] top-[22%] w-3 h-3 lg:w-5 lg:h-5 opacity-50 shining "
         />
         <Image
           src={starPurple}
           alt="liberty"
-          className="absolute top-[50%] lg:top-[36%] right-[80%] lg:right-[43%] w-3 h-3 lg:w-5 lg:h-5"
+          className="absolute top-[50%] lg:top-[36%] right-[80%] lg:right-[43%] w-3 h-3 lg:w-5 lg:h-5 shining"
         />
         <Image
           src={starW}
           alt="liberty"
-          className="absolute bottom-[12%] lg:bottom-[25%] right-[20%] lg:right-[43%] w-3 h-3 lg:w-5 lg:h-5"
+          className="absolute bottom-[12%] lg:bottom-[25%] right-[20%] lg:right-[43%] w-3 h-3 lg:w-5 lg:h-5 shining"
         />
       </section>
       <hr className="opacity-30" />
@@ -940,7 +944,7 @@ export default function Home() {
             <Image
               src={starW}
               alt="icon"
-              className="absolute w-3 h-3 lg:w-5 lg:h-5 opacity-50 -top-3 right-[7%] lg:right-[30%] lg:top-[7%]"
+              className="absolute w-3 h-3 lg:w-5 lg:h-5 opacity-50 -top-3 right-[7%] lg:right-[30%] lg:top-[7%] shining"
             />
             <Image
               src={starP}
@@ -950,7 +954,7 @@ export default function Home() {
             <Image
               src={starPurple}
               alt="icon"
-              className="absolute bottom-[28%] -left-[20%] w-3 h-3 lg:w-5 lg:h-5"
+              className="absolute bottom-[28%] -left-[20%] w-3 h-3 lg:w-5 lg:h-5 shining"
             />
           </div>
           <div className="w-full lg:w-[45%] relative flex flex-col justify-center items-baseline h-[70vh] lg:h-auto">
@@ -963,7 +967,7 @@ export default function Home() {
             <Image
               src={starW}
               alt="icon"
-              className="absolute w-2 h-2 lg:w-5 lg:h-5 right-[30%] top-[20%]"
+              className="absolute w-2 h-2 lg:w-5 lg:h-5 right-[30%] top-[20%] shining"
             />
             <Image
               src={starPurple}
@@ -973,12 +977,12 @@ export default function Home() {
             <Image
               src={starW}
               alt="icon"
-              className="absolute w-2 h-2 lg:w-5 lg:h-5 left-[30%] lg:left-[25%] bottom-[35%]"
+              className="absolute w-2 h-2 lg:w-5 lg:h-5 left-[30%] lg:left-[25%] bottom-[35%] shining"
             />
             <Image
               src={starW}
               alt="icon"
-              className="absolute bottom-[35%] opacity-50 right-[15%] w-2 h-2 lg:w-5 lg:h-5"
+              className="absolute bottom-[35%] opacity-50 right-[15%] w-2 h-2 lg:w-5 lg:h-5 shining"
             />
           </div>
         </div>
@@ -1054,7 +1058,7 @@ export default function Home() {
         <Image
           src={starW}
           alt="insta"
-          className="absolute top-[15%] lg:top-[20%] left-[2%] lg:left-[5%] w-3 h-3 lg:w-5 lg:h-5"
+          className="absolute top-[15%] lg:top-[20%] left-[2%] lg:left-[5%] w-3 h-3 lg:w-5 lg:h-5 shining"
         />
         <Image
           src={starPurple}
@@ -1069,7 +1073,7 @@ export default function Home() {
         <Image
           src={starW}
           alt="insta"
-          className="absolute w-3 h-3 top-[75%] right-[15%] lg:top-[55%] lg:right-[8%] lg:w-5 lg:h-5"
+          className="absolute w-3 h-3 top-[75%] right-[15%] lg:top-[55%] lg:right-[8%] lg:w-5 lg:h-5 shining"
         />
         <p className="text-slate-200 text-xs pt-10">
           All rights reserved. © getlinked Ltd.
