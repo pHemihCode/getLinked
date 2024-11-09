@@ -3,8 +3,8 @@ import React, {useState} from 'react'
 import { designer, dol1, dol2, dotted, starP, starW } from '@/CONSTANTS/images'
 import Image from 'next/image'
 import Modal from '@/app/components/Modal';
-export default function page() {
-  const [submit, setSubmit] = useState(false);
+export default function Register() {
+  // const [submit, setSubmit] = useState(false);
   const [openModal, setOpenModal] = useState<boolean>(false)
   const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()

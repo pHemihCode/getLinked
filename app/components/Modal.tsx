@@ -1,10 +1,14 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React,{ Dispatch, SetStateAction } from "react";
 import { success, man, starP, starW, emoji } from "@/CONSTANTS/images";
 import Link from "next/link";
 
-export default function Modal({ setOpenModal }: any) {
+interface ModalProps {
+  setOpenModal: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function Modal({ setOpenModal }:ModalProps) {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
