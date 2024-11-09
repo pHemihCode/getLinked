@@ -177,12 +177,12 @@ export default function Home() {
             <b className=" text-color-2">tech Hackathon 1.0</b>
           </h1>
           <p className="text-xs lg:text-sm text-slate-100 text-center lg:text-start">
-          "Our tech hackathon is a melting pot of visionaries, and its purpose
-            is as clear as day: to shape the future. Whether you're a coding
-            genius, a design maverick, or a concept wizard, you'll have the
+            Our tech hackathon is a melting pot of visionaries, and its purpose
+            is as clear as day: to shape the future. Whether you&apos;re a coding
+            genius, a design maverick, or a concept wizard, you&apos;ll have the
             chance to transform your ideas into reality. Solving real-world
             problems, pushing the boundaries of technology, and creating
-            solutions that can change the world, that's what we're all about!"
+            solutions that can change the world, that&apos;s what we&apos;re all about!
           </p>
         </div>
       </motion.section>
@@ -206,12 +206,12 @@ export default function Home() {
             <b className=" text-color-2">Guidelines</b>
           </h1>
           <p className="text-xs lg:text-sm text-slate-100 text-center lg:text-start">
-           "Our tech hackathon is a melting pot of visionaries, and its purpose
-            is as clear as day: to shape the future. Whether you're a coding
-            genius, a design maverick, or a concept wizard, you'll have the
+            Our tech hackathon is a melting pot of visionaries, and its purpose
+            is as clear as day: to shape the future. Whether you&apos;re a coding
+            genius, a design maverick, or a concept wizard, you&apos;ll have the
             chance to transform your ideas into reality. Solving real-world
             problems, pushing the boundaries of technology, and creating
-            solutions that can change the world, that's what we're all about!"
+            solutions that can change the world, that&apos;s what we&apos;re all about!
           </p>
         </div>
         <div className="w-full flex justify-center lg:inline lg:w-[40%] relative">
@@ -318,7 +318,7 @@ export default function Home() {
             </div>
             <div className="flex flex-row justify-between py-1 items-center border-b-2 border-color-2">
               <p className="text-slate-200 text-xs lg:text-sm">
-                "What happens if I don't have an idea for a project?"
+                What happens if I don&apos;t have an idea for a project?
               </p>
               <span className="text-color-2 text-sm lg:text-base font-bold">
                 +
