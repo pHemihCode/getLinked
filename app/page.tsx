@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Line from "@/public/Line.svg";
@@ -11,43 +11,26 @@ import universe from "@/public/universe.png";
 import starP from "@/public/star-purple.png";
 import starW from "@/public/star-white.png";
 import { motion } from "framer-motion";
-import {
-  arrow,
-  FAQ,
-  idea,
-  lady,
-  men,
-  smallQ,
-  bigQ,
-  starPurple,
-  lineP,
-  winner,
-  silver,
-  bronze,
-  gold,
-  liberty,
-  wisper,
-  libertyPay,
-  paybox,
-  visual,
-  winwise,
-  checked,
-  auth,
-  unluck,
-  insta,
-  twitter,
-  facebook,
-  linkedin,
-  location,
-  phone,
-} from "@/CONSTANTS/images";
+import {arrow,FAQ,idea,lady,men,smallQ,bigQ,starPurple,lineP,winner,silver,bronze,gold,liberty,wisper,libertyPay,paybox,visual,winwise,checked,auth,unluck,insta,twitter,facebook, linkedin, location, phone,} from "@/CONSTANTS/images";
 
 export default function Home() {
-     
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
+  const [time, setTime] = useState({hours: '',minutes: '',seconds: ''});
+
+  const updateTime = () => {
+    const now = new Date();
+    setTime({
+      hours: String(now.getHours()).padStart(2, '0'),
+      minutes: String(now.getMinutes()).padStart(2, '0'),
+      seconds: String(now.getSeconds()).padStart(2, '0')
+    });
+  };
+
+  useEffect(() => {
+    updateTime();
+    const intervalId = setInterval(updateTime, 1000)
+
+    return () => clearInterval(intervalId)
+  }, []);
 
   return (
     <main className="relative">
@@ -100,8 +83,8 @@ export default function Home() {
             </Link>
             <div className="timers">
               <h1 className="font-semibold text-4xl">
-                {hours}<b className="text-xs lg:text-sm font-normal">H</b> {minutes}
-                <b className="text-xs lg:text-sm  font-normal">M</b> {seconds}
+                {time.hours}<b className="text-xs lg:text-sm font-normal">H</b> {time.minutes}
+                <b className="text-xs lg:text-sm  font-normal">M</b> {time.seconds}
                 <b className="text-xs lg:text-sm font-normal">S</b>
               </h1>
             </div>
@@ -188,7 +171,7 @@ export default function Home() {
       </motion.section>
       <hr className=" opacity-30" />
 
-      <section className="bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG flex flex-col-reverse lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:p-0">
+      <section className="bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG flex flex-col-reverse lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:py-10">
         <div className="w-full lg:w-[35%] relative">
           <Image
             src={starW}
@@ -220,7 +203,7 @@ export default function Home() {
       </section>
       <hr className=" opacity-30" />
 
-      <section className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:px-0">
+      <section className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:py-10 lg:px-0">
         <div className="w-full flex justify-center items-center lg:w-[45%] relative pt-[10px]">
           <Image src={men} alt="lightbulb" className="object-contain w-full" />
           <Image
@@ -287,7 +270,7 @@ export default function Home() {
       </section>
       <hr className=" opacity-30" />
 
-      <section className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 gap-16 lg:px-0">
+      <section className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 gap-16 lg:py-10 lg:px-0">
         <div className="w-full lg:w-[30%]">
           <div className="flex flex-col">
             <h1 className="text-xl lg:text-3xl text-white font-semibold py-5 lg:py-3 text-center lg:text-start">
