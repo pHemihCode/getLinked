@@ -10,26 +10,55 @@ import human from "@/public/human.png";
 import universe from "@/public/universe.png";
 import starP from "@/public/star-purple.png";
 import starW from "@/public/star-white.png";
-import { motion } from "framer-motion";
-import {arrow,FAQ,idea,lady,men,smallQ,bigQ,starPurple,lineP,winner,silver,bronze,gold,liberty,wisper,libertyPay,paybox,visual,winwise,checked,auth,unluck,insta,twitter,facebook, linkedin, location, phone,} from "@/CONSTANTS/images";
+import { easeInOut, motion } from "framer-motion";
+import {
+  arrow,
+  FAQ,
+  idea,
+  lady,
+  men,
+  smallQ,
+  bigQ,
+  starPurple,
+  lineP,
+  winner,
+  silver,
+  bronze,
+  gold,
+  liberty,
+  wisper,
+  libertyPay,
+  paybox,
+  visual,
+  winwise,
+  checked,
+  auth,
+  unluck,
+  insta,
+  twitter,
+  facebook,
+  linkedin,
+  location,
+  phone,
+} from "@/CONSTANTS/images";
 
 export default function Home() {
-  const [time, setTime] = useState({hours: '',minutes: '',seconds: ''});
+  const [time, setTime] = useState({ hours: "00", minutes: "00", seconds: "00" });
 
   const updateTime = () => {
     const now = new Date();
     setTime({
-      hours: String(now.getHours()).padStart(2, '0'),
-      minutes: String(now.getMinutes()).padStart(2, '0'),
-      seconds: String(now.getSeconds()).padStart(2, '0')
+      hours: String(now.getHours()).padStart(2, "0"),
+      minutes: String(now.getMinutes()).padStart(2, "0"),
+      seconds: String(now.getSeconds()).padStart(2, "0"),
     });
   };
 
   useEffect(() => {
     updateTime();
-    const intervalId = setInterval(updateTime, 1000)
+    const intervalId = setInterval(updateTime, 1000);
 
-    return () => clearInterval(intervalId)
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -83,8 +112,11 @@ export default function Home() {
             </Link>
             <div className="timers">
               <h1 className="font-semibold text-4xl">
-                {time.hours}<b className="text-xs lg:text-sm font-normal">H</b> {time.minutes}
-                <b className="text-xs lg:text-sm  font-normal">M</b> {time.seconds}
+                {time.hours}
+                <b className="text-xs lg:text-sm font-normal">H</b>{" "}
+                {time.minutes}
+                <b className="text-xs lg:text-sm  font-normal">M</b>{" "}
+                {time.seconds}
                 <b className="text-xs lg:text-sm font-normal">S</b>
               </h1>
             </div>
@@ -115,7 +147,7 @@ export default function Home() {
               className="object-cover z-30 filter grayscale"
             />
             {/* <Image src={metrix} alt="fire" className='absolute top-0 z-0'/> */}
-            <Image      
+            <Image
               src={universe}
               alt="universe"
               className="absolute top-0 left-[10%] z-20 w-[70%] rotating"
@@ -127,10 +159,9 @@ export default function Home() {
       <hr className=" opacity-30" />
 
       <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 5 }}
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:px-0 gap-x-10"
       >
         <div className="w-full flex justify-center lg:inline lg:w-[40%] relative">
@@ -161,17 +192,23 @@ export default function Home() {
           </h1>
           <p className="text-xs lg:text-sm text-slate-100 text-center lg:text-start">
             Our tech hackathon is a melting pot of visionaries, and its purpose
-            is as clear as day: to shape the future. Whether you&apos;re a coding
-            genius, a design maverick, or a concept wizard, you&apos;ll have the
-            chance to transform your ideas into reality. Solving real-world
-            problems, pushing the boundaries of technology, and creating
-            solutions that can change the world, that&apos;s what we&apos;re all about!
+            is as clear as day: to shape the future. Whether you&apos;re a
+            coding genius, a design maverick, or a concept wizard, you&apos;ll
+            have the chance to transform your ideas into reality. Solving
+            real-world problems, pushing the boundaries of technology, and
+            creating solutions that can change the world, that&apos;s what
+            we&apos;re all about!
           </p>
         </div>
       </motion.section>
       <hr className=" opacity-30" />
 
-      <section className="bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG flex flex-col-reverse lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:py-10">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG flex flex-col-reverse lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:py-10"
+      >
         <div className="w-full lg:w-[35%] relative">
           <Image
             src={starW}
@@ -190,20 +227,26 @@ export default function Home() {
           </h1>
           <p className="text-xs lg:text-sm text-slate-100 text-center lg:text-start">
             Our tech hackathon is a melting pot of visionaries, and its purpose
-            is as clear as day: to shape the future. Whether you&apos;re a coding
-            genius, a design maverick, or a concept wizard, you&apos;ll have the
-            chance to transform your ideas into reality. Solving real-world
-            problems, pushing the boundaries of technology, and creating
-            solutions that can change the world, that&apos;s what we&apos;re all about!
+            is as clear as day: to shape the future. Whether you&apos;re a
+            coding genius, a design maverick, or a concept wizard, you&apos;ll
+            have the chance to transform your ideas into reality. Solving
+            real-world problems, pushing the boundaries of technology, and
+            creating solutions that can change the world, that&apos;s what
+            we&apos;re all about!
           </p>
         </div>
         <div className="w-full flex justify-center lg:inline lg:w-[40%] relative">
           <Image src={lady} alt="lightbulb" className="w-full" />
         </div>
-      </section>
+      </motion.section>
       <hr className=" opacity-30" />
 
-      <section className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:py-10 lg:px-0">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 lg:py-10 lg:px-0"
+      >
         <div className="w-full flex justify-center items-center lg:w-[45%] relative pt-[10px]">
           <Image src={men} alt="lightbulb" className="object-contain w-full" />
           <Image
@@ -267,10 +310,15 @@ export default function Home() {
             </button>
           </Link>
         </div>
-      </section>
+      </motion.section>
       <hr className=" opacity-30" />
 
-      <section className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 gap-16 lg:py-10 lg:px-0">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex flex-col lg:flex-row justify-center items-center w-full lg:h-[100vh] p-10 gap-16 lg:py-10 lg:px-0"
+      >
         <div className="w-full lg:w-[30%]">
           <div className="flex flex-col">
             <h1 className="text-xl lg:text-3xl text-white font-semibold py-5 lg:py-3 text-center lg:text-start">
@@ -373,10 +421,15 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
       <hr className=" opacity-30" />
 
-      <section className="w-ful flex flex-col justify-center items-cente p-10 lg:px-0">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="w-ful flex flex-col justify-center items-cente p-10 lg:px-0"
+      >
         <div className="w-full flex flex-col justify-center items-center">
           <div className="header pb-7 w-full lg:w-[40%] flex flex-col justify-center items-center">
             <h1 className="text-xl lg:text-3xl text-white font-semibold text-center">
@@ -688,10 +741,15 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
       <hr className=" opacity-30" />
 
-      <section className="flex flex-col gap-16 lg:gap-0 lg:justify-center lg:flex-row lg:h-[100vh] bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG py-10 lg:px-0">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex flex-col gap-16 lg:gap-0 lg:justify-center lg:flex-row lg:h-[100vh] bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG py-10 lg:px-0"
+      >
         <div className="lg:hidden flex flex-col justify-center items-center">
           <h1 className="text-xl lg:text-3xl text-white font-semibold py-2 lg:text-start text-center">
             Prizes and
@@ -785,10 +843,15 @@ export default function Home() {
             className="absolute w-2 h-2 lg:w-3 lg:h-3 -bottom-[10%] lg:bottom-0 lg:left-[60%] left-[50%] opacity-50"
           />
         </div>
-      </section>
+      </motion.section>
       <hr className="opacity-30" />
 
-      <section className="relative w-full flex flex-col items-center pb-10">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="relative w-full flex flex-col items-center pb-10"
+      >
         <div className="w-[80%] lg:w-[30%] text-center py-10">
           <h1 className="text-xl lg:text-3xl text-white font-semibold lg:py- text-center">
             Partners and Sponsors
@@ -864,10 +927,15 @@ export default function Home() {
           alt="liberty"
           className="absolute bottom-[12%] lg:bottom-[25%] right-[20%] lg:right-[43%] w-3 h-3 lg:w-5 lg:h-5 shining"
         />
-      </section>
+      </motion.section>
       <hr className="opacity-30" />
 
-      <section className="flex flex-col lg:flex-row justify-center items-center p-10 pb-0 lg:p bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex flex-col lg:flex-row justify-center items-center p-10 pb-0 lg:p bg-gradient-to-tl from-deep-BG from-40% via-color-3b to-deep-BG"
+      >
         <div className="w-full lg:w-[80%] flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between">
           <div className="relative w-full lg:w-[45%] flex flex-col justify-center items-center py-0 lg:py-20">
             <div className="">
@@ -968,10 +1036,15 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
       <hr className="opacity-30" />
 
-      <section className="relative flex flex-col justify-center items-center py-10">
+      <motion.section
+        initial={{ scale: 0.6 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="relative flex flex-col justify-center items-center py-10"
+      >
         <div className="theCont flex flex-col lg:flex-row w-[80%] justify-around gap-10 lg:gap-0">
           <div className="item bg-re-500 w-full lg:w-[40%] flex flex-col gap-8 justify-between">
             <div>
@@ -1060,7 +1133,7 @@ export default function Home() {
         <p className="text-slate-200 text-xs pt-10">
           All rights reserved. © getlinked Ltd.
         </p>
-      </section>
+      </motion.section>
     </main>
   );
 }
