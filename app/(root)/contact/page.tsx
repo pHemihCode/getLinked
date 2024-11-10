@@ -10,7 +10,6 @@ import {
   starP,
   starW,
 } from "@/CONSTANTS/images";
-import Loader from "@/app/components/Loader";
 
 type initialValuesType = {
   firstName: string;
@@ -52,15 +51,14 @@ export default function Contact() {
       setError(null);
       setIsSubmitting(true);
 
-      // Simulate a delay (e.g., for an API call)
+ 
       setTimeout(() => {
         console.log(inputValues);
-        setInputValues(initialValues); // Reset form
-        setIsSubmitting(false); // Reset loading state
+        setInputValues(initialValues); 
+        setIsSubmitting(false); 
       }, 8000);
 
-      // Optionally redirect after submission:
-      // router.push('/');
+      router.push('/');
     } catch (err) {
       console.error("Submission error:", err);
       setIsSubmitting(false); // Reset loading state on error

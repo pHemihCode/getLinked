@@ -10,7 +10,7 @@ import human from "@/public/human.png";
 import universe from "@/public/universe.png";
 import starP from "@/public/star-purple.png";
 import starW from "@/public/star-white.png";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   arrow,
   FAQ,
